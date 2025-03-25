@@ -23,7 +23,7 @@ export default function Page() {
       isNew: false,
       isBest: false,
       isSale: true,
-      timeLeft: "02:45:10"
+      timeLeft: "02:45:10",
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ export default function Page() {
       isNew: false,
       isBest: false,
       isSale: true,
-      timeLeft: "08:12:33"
+      timeLeft: "08:12:33",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ export default function Page() {
       isNew: false,
       isBest: false,
       isSale: true,
-      timeLeft: "03:59:59"
+      timeLeft: "03:59:59",
     },
     {
       id: 4,
@@ -65,7 +65,7 @@ export default function Page() {
       isNew: false,
       isBest: false,
       isSale: true,
-      timeLeft: "01:30:22"
+      timeLeft: "01:30:22",
     },
     {
       id: 5,
@@ -79,8 +79,8 @@ export default function Page() {
       isNew: false,
       isBest: false,
       isSale: true,
-      timeLeft: "04:15:30"
-    }
+      timeLeft: "04:15:30",
+    },
   ];
 
   // 가격 필터링
@@ -105,7 +105,7 @@ export default function Page() {
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   // 별점 렌더링 함수
-  const renderStars = (rating) => {
+  const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -266,9 +266,18 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="category-product__content">
-                  <div className="timedeal__timer" style={{ marginBottom: "10px", color: "#FF6B6B", fontWeight: "bold" }}>
+                  <div
+                    className="timedeal__timer"
+                    style={{
+                      marginBottom: "10px",
+                      color: "#FF6B6B",
+                      fontWeight: "bold",
+                    }}
+                  >
                     <span className="timedeal__timer-text">남은 시간: </span>
-                    <span className="timedeal__timer-value">{product.timeLeft}</span>
+                    <span className="timedeal__timer-value">
+                      {product.timeLeft}
+                    </span>
                   </div>
                   <div className="category-product__category">
                     {product.category}
