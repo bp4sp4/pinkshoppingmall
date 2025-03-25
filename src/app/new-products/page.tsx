@@ -22,7 +22,7 @@ export default function Page() {
       reviewCount: 22,
       isNew: true,
       isBest: false,
-      isSale: false
+      isSale: false,
     },
     {
       id: 5,
@@ -35,7 +35,7 @@ export default function Page() {
       reviewCount: 18,
       isNew: true,
       isBest: false,
-      isSale: false
+      isSale: false,
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ export default function Page() {
       reviewCount: 15,
       isNew: true,
       isBest: false,
-      isSale: false
+      isSale: false,
     },
     {
       id: 2,
@@ -61,8 +61,8 @@ export default function Page() {
       reviewCount: 12,
       isNew: true,
       isBest: false,
-      isSale: false
-    }
+      isSale: false,
+    },
   ];
 
   // 가격 필터링
@@ -87,7 +87,7 @@ export default function Page() {
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   // 별점 렌더링 함수
-  const renderStars = (rating) => {
+  const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
