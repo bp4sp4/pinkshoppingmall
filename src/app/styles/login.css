@@ -1,0 +1,334 @@
+/* 로그인 페이지 스타일 - BEM 방법론 적용 */
+
+/* 로그인 섹션 */
+.login-section {
+  padding: var(--spacing-xl) 0;
+  min-height: calc(100vh - 300px);
+  display: flex;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 로그인 이미지 */
+.login-image {
+  flex: 1;
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .login-image {
+    display: block;
+  }
+}
+
+.login-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-image__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 107, 156, 0.7), rgba(255, 107, 156, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.login-image__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.login-image__text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+/* 로그인 폼 */
+.login-form-container {
+  flex: 1;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.login-form__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  position: relative;
+}
+
+.login-form__title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-main);
+}
+
+.login-form {
+  margin-bottom: var(--spacing-lg);
+}
+
+.login-form__group {
+  margin-bottom: var(--spacing-md);
+}
+
+.login-form__label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.login-form__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-form__icon {
+  position: absolute;
+  left: var(--spacing-md);
+  color: #999;
+}
+
+.login-form__input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) * 2 + 16px);
+  border: 1px solid var(--color-medium-gray);
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form__input:focus {
+  outline: none;
+  border-color: var(--color-main);
+  box-shadow: 0 0 0 2px rgba(255, 107, 156, 0.2);
+}
+
+.login-form__toggle-password {
+  position: absolute;
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.login-form__toggle-password:hover {
+  color: var(--color-main);
+}
+
+.login-form__options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.login-form__remember {
+  display: flex;
+  align-items: center;
+}
+
+.login-form__checkbox {
+  margin-right: var(--spacing-xs);
+  accent-color: var(--color-main);
+}
+
+.login-form__checkbox-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.login-form__forgot-password {
+  font-size: 0.9rem;
+  color: var(--color-main);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-form__forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-form__submit {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.login-form__divider {
+  position: relative;
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.login-form__divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-medium-gray);
+}
+
+.login-form__divider-text {
+  position: relative;
+  background-color: var(--color-white);
+  padding: 0 var(--spacing-md);
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.login-form__social {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.login-form__social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-2xl);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form__social-button i {
+  margin-right: var(--spacing-sm);
+}
+
+.login-form__social-button--kakao {
+  background-color: #FEE500;
+  color: #3C1E1E;
+}
+
+.login-form__social-button--kakao:hover {
+  background-color: #F6DC00;
+  box-shadow: var(--shadow-md);
+}
+
+.login-form__social-button--naver {
+  background-color: #03C75A;
+  color: var(--color-white);
+}
+
+.login-form__social-button--naver:hover {
+  background-color: #02B350;
+  box-shadow: var(--shadow-md);
+}
+
+.login-form__signup {
+  text-align: center;
+}
+
+.login-form__signup-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: var(--spacing-xs);
+}
+
+.login-form__signup-link {
+  color: var(--color-main);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-form__signup-link:hover {
+  text-decoration: underline;
+}
+
+.login-form__signup-separator {
+  color: #ddd;
+  margin: 0 5px 0 5px;
+}
+
+.login-form__error {
+  color: #FF3B30;
+  font-size: 0.875rem;
+  margin-top: var(--spacing-xs);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .login-form-container {
+    padding: var(--spacing-lg);
+  }
+
+  .login-form__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-form-container {
+    padding: var(--spacing-md);
+  }
+
+  .login-form__options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .login-form__title {
+    font-size: 1.5rem;
+  }
+}

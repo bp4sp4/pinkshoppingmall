@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#FFF0F5"/>
+  <rect x="50" y="50" width="200" height="200" rx="10" fill="#FF6B9C"/>
+  <text x="150" y="150" font-family="Noto Sans KR" font-size="24" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">타임딜 1</text>
+</svg>

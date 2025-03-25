@@ -1,0 +1,219 @@
+/* 장바구니 팝업 스타일 */
+.cart-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+.cart-popup {
+  width: 400px;
+  max-width: 90%;
+  height: 100%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cart-popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.cart-popup__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.cart-popup__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-medium-gray);
+  transition: color 0.3s ease;
+}
+
+.cart-popup__close:hover {
+  color: var(--color-main);
+}
+
+.cart-popup__content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-popup__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--color-medium-gray);
+  text-align: center;
+}
+
+.cart-popup__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-popup__item {
+  display: flex;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.cart-popup__item-image-container {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  margin-right: var(--spacing-md);
+  background-color: var(--color-light-gray);
+}
+
+.cart-popup__item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-popup__item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-popup__item-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.cart-popup__item-price {
+  font-weight: 500;
+  color: var(--color-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cart-popup__item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.cart-popup__quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-sm);
+}
+
+.cart-popup__quantity-button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: background-color 0.3s ease;
+}
+
+.cart-popup__quantity-button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.cart-popup__quantity-button:disabled {
+  color: var(--color-medium-gray);
+  cursor: not-allowed;
+}
+
+.cart-popup__quantity {
+  width: 30px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cart-popup__remove-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-medium-gray);
+  transition: color 0.3s ease;
+  padding: var(--spacing-xs);
+}
+
+.cart-popup__remove-button:hover {
+  color: var(--color-main);
+}
+
+.cart-popup__summary {
+  margin-top: auto;
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.cart-popup__total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.cart-popup__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cart-popup__checkout-button,
+.cart-popup__continue-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-weight: 500;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .cart-popup {
+    width: 320px;
+  }
+  
+  .cart-popup__item-image-container {
+    width: 60px;
+    height: 60px;
+  }
+}

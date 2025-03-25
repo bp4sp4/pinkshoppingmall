@@ -1,0 +1,110 @@
+/* 스타일 가이드 */
+:root {
+  /* 색상 */
+  --color-main: #FF6B9A;
+  --color-accent: #FFD700;
+  --color-text: #333333;
+  --color-light-text: #666666;
+  --color-white: #FFFFFF;
+  --color-light-gray: #F5F5F5;
+  --color-medium-gray: #CCCCCC;
+  --color-dark-gray: #999999;
+  --color-error: #FF3B30;
+  --color-success: #4CD964;
+
+  /* 폰트 */
+  --font-heading: 'Pretendard', 'Noto Sans KR', sans-serif;
+  --font-body: 'Pretendard', 'Noto Sans KR', sans-serif;
+
+  /* 간격 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* 테두리 */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* 그림자 */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 타임딜 스와이퍼 스타일 수정 */
+.section__title-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.timedeal-swiper__navigation {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  position: relative;
+  top: 20px;
+}
+
+.timedeal-swiper__button-prev,
+.timedeal-swiper__button-next {
+  position: static !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text) !important;
+}
+
+.timedeal-swiper__button-prev::after,
+.timedeal-swiper__button-next::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.timedeal-swiper__button-prev:hover,
+.timedeal-swiper__button-next:hover {
+  background-color: var(--color-main);
+  color: var(--color-white) !important;
+}
+
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.header__action-icon {
+  color: var(--color-text);
+  transition: color 0.3s ease;
+  background-color: none;
+  border: none;
+}
+
+.header__action-icon:hover {
+  color: var(--color-main);
+}
+
+.header__cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-main);
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
