@@ -19,8 +19,8 @@ interface TimeDealItem {
 const timeDealItems: TimeDealItem[] = [
   {
     id: 1,
-    image: "/assets/timedeal/timedeal2.svg",
-    title: "플라워 패턴 스커트",
+    image: "/swatzipup.png",
+    title: "스웻 후드 집업",
     originalPrice: "45,000원",
     discountPrice: "29,000원",
     remainingTime: "02:45:10",

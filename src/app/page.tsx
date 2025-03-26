@@ -5,7 +5,6 @@ import MainBannerSwiper from "./components/MainBannerSwiper";
 import Link from "next/link";
 import "./styles/card-styles.css";
 import DummyProducts from "./components/DummyProducts";
-import Chatbot from "./components/Chatbot";
 
 export default function Home() {
   return (
@@ -300,11 +299,6 @@ export default function Home() {
               </div>
             </Link>
           </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <Chatbot />
         </div>
       </section>
     </main>

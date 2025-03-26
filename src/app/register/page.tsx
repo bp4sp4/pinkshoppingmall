@@ -98,11 +98,6 @@ export default function Register() {
       <div className="container">
         <div className="login-container">
           <div className="login-image">
-            <img
-              src="/assets/bestseller/bestseller4.svg"
-              alt="회원가입 이미지"
-              className="login-image__img"
-            />
             <div className="login-image__overlay">
               <h2 className="login-image__title">핑크숍 회원이 되어보세요</h2>
               <p className="login-image__text">

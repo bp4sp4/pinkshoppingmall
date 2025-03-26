@@ -81,11 +81,6 @@ export default function Login() {
       <div className="container">
         <div className="login-container">
           <div className="login-image">
-            <img
-              src="/assets/bestseller/bestseller1.svg"
-              alt="로그인 이미지"
-              className="login-image__img"
-            />
             <div className="login-image__overlay">
               <h2 className="login-image__title">
                 핑크숍에 오신 것을 환영합니다
@@ -95,7 +90,6 @@ export default function Login() {
               </p>
             </div>
           </div>
-
           <div className="login-form-container">
             <div className="login-form-wrapper">
               <h1 className="login-form__title">로그인</h1>
