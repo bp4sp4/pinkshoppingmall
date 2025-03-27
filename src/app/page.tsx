@@ -96,6 +96,9 @@ export default function Home() {
               <div className="bestseller__content">
                 <h3 className="bestseller__title">루즈핏 레더 트렌치 코트</h3>
                 <div className="bestseller__price">150,000원</div>
+                <button className="button button--primary timedeal__button">
+                  구메하기
+                </button>
               </div>
             </Link>
             <Link href="/product/4" className="bestseller__card">
@@ -110,6 +113,9 @@ export default function Home() {
               <div className="bestseller__content">
                 <h3 className="bestseller__title">투버튼 썸머 폴리 자켓</h3>
                 <div className="bestseller__price">27,000원</div>
+                <button className="button button--primary timedeal__button">
+                  구메하기
+                </button>
               </div>
             </Link>
 
@@ -125,6 +131,9 @@ export default function Home() {
               <div className="bestseller__content">
                 <h3 className="bestseller__title">니트 칼라 버튼 가디건</h3>
                 <div className="bestseller__price">39,000원</div>
+                <button className="button button--primary timedeal__button">
+                  구메하기
+                </button>
               </div>
             </Link>
 
@@ -140,6 +149,9 @@ export default function Home() {
               <div className="bestseller__content">
                 <h3 className="bestseller__title">잇미샤 나시탑 세트 가디건</h3>
                 <div className="bestseller__price">101,000원</div>
+                <button className="button button--primary timedeal__button">
+                  구메하기
+                </button>
               </div>
             </Link>
 
@@ -155,6 +167,9 @@ export default function Home() {
               <div className="bestseller__content">
                 <h3 className="bestseller__title">노벨라 슬림 라인 티</h3>
                 <div className="bestseller__price">38,000원</div>
+                <button className="button button--primary timedeal__button">
+                  구메하기
+                </button>
               </div>
             </Link>
 
@@ -170,6 +185,9 @@ export default function Home() {
               <div className="bestseller__content">
                 <h3 className="bestseller__title">퀼팅 여성 경량 패딩 자켓</h3>
                 <div className="bestseller__price">67,000원</div>
+                <button className="button button--primary timedeal__button">
+                  구메하기
+                </button>
               </div>
             </Link>
           </div>
