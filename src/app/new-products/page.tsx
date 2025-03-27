@@ -12,7 +12,7 @@ export default function Page() {
   // 상품 데이터
   const products = [
     {
-      id: 4,
+      id: 1,
       title: "퍼프 슬리브 블라우스",
       category: "상의",
       originalPrice: "52,000원",
@@ -25,7 +25,7 @@ export default function Page() {
       isSale: false,
     },
     {
-      id: 5,
+      id: 2,
       title: "플리츠 미니 스커트",
       category: "하의",
       originalPrice: "46,000원",
@@ -51,7 +51,72 @@ export default function Page() {
       isSale: false,
     },
     {
-      id: 2,
+      id: 4,
+      title: "슬림핏 데님 팬츠",
+      category: "하의",
+      originalPrice: "62,000원",
+      price: "52,000원",
+      image: "/assets/product4.svg",
+      rating: 4.3,
+      reviewCount: 12,
+      isNew: true,
+      isBest: false,
+      isSale: false,
+    },
+    {
+      id: 5,
+      title: "퍼프 슬리브 블라우스",
+      category: "상의",
+      originalPrice: "52,000원",
+      price: "42,000원",
+      image: "/assets/product1.svg",
+      rating: 4.6,
+      reviewCount: 22,
+      isNew: true,
+      isBest: false,
+      isSale: false,
+    },
+    {
+      id: 6,
+      title: "플리츠 미니 스커트",
+      category: "하의",
+      originalPrice: "29,000원",
+      price: "18,000원",
+      image: "/assets/product2.svg",
+      rating: 4.4,
+      reviewCount: 18,
+      isNew: true,
+      isBest: false,
+      isSale: false,
+    },
+    {
+      id: 7,
+      title: "크롭 니트 가디건",
+      category: "상의",
+      originalPrice: "58,000원",
+      price: "48,000원",
+      image: "/assets/product3.svg",
+      rating: 4.5,
+      reviewCount: 15,
+      isNew: true,
+      isBest: false,
+      isSale: false,
+    },
+    {
+      id: 8,
+      title: "슬림핏 데님 팬츠",
+      category: "하의",
+      originalPrice: "62,000원",
+      price: "52,000원",
+      image: "/assets/product4.svg",
+      rating: 4.3,
+      reviewCount: 12,
+      isNew: true,
+      isBest: false,
+      isSale: false,
+    },
+    {
+      id: 9,
       title: "슬림핏 데님 팬츠",
       category: "하의",
       originalPrice: "62,000원",
@@ -255,21 +320,23 @@ export default function Page() {
                     <button className="category-product__action-button">
                       <i className="fas fa-shopping-cart"></i>
                     </button>
-                    <button className="category-product__action-button">
-                      <i className="fas fa-search"></i>
-                    </button>
+                    <Link
+                      href={`/product/${product.id}`}
+                      className="category-product__title-link"
+                    >
+                      <button className="category-product__action-button">
+                        <i className="fas fa-search"></i>
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-product__content">
                   <div className="category-product__category">
                     {product.category}
                   </div>
-                  <Link
-                    href={`/product/${product.id}`}
-                    className="category-product__title-link"
-                  >
-                    <h3 className="category-product__title">{product.title}</h3>
-                  </Link>
+
+                  <h3 className="category-product__title">{product.title}</h3>
+
                   <div className="category-product__price-container">
                     <span className="category-product__price-original">
                       {product.originalPrice}

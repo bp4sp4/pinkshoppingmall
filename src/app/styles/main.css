@@ -49,7 +49,7 @@
 
 /* 배너 스타일 */
 .banner {
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-xl) 0;
 }
 
 .banner__card {
@@ -275,6 +275,23 @@
   width: 30px;
   border-radius: 5px;
 }
+
+.main-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-medium-gray);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.main-swiper .swiper-pagination-bullet-active {
+  background-color: var(--color-main);
+  opacity: 1;
+  width: 30px;
+  border-radius: 5px;
+}
+
+
 
 /* 카테고리 스타일 */
 .category {
@@ -582,7 +599,7 @@
 .main-banner-swiper__button-next {
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.8);
+
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -593,11 +610,13 @@
 
 .main-banner-swiper__button-prev {
   position: absolute;
+  color: #ff6b9a !important;
   left: 20px;
 }
 
 .main-banner-swiper__button-next {
   position: absolute;
+  color: #ff6b9a !important;
   right: 20px;
 }
 

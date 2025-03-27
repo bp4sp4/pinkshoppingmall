@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" fill="#FFF0F5"/>
-  <rect x="100" y="100" width="600" height="400" rx="20" fill="#FF6B9C"/>
-  <text x="400" y="300" font-family="Noto Sans KR" font-size="48" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">핑크숍 메인 배너</text>
-</svg>

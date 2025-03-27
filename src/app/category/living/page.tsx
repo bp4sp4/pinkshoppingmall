@@ -323,21 +323,21 @@ export default function Page() {
                     <button className="category-product__action-button">
                       <i className="fas fa-shopping-cart"></i>
                     </button>
-                    <button className="category-product__action-button">
-                      <i className="fas fa-search"></i>
-                    </button>
+                    <Link
+                      href={`/product/${product.id}`}
+                      className="category-product__title-link"
+                    >
+                      <button className="category-product__action-button">
+                        <i className="fas fa-search"></i>
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-product__content">
                   <div className="category-product__category">
                     {product.category}
                   </div>
-                  <Link
-                    href={`/product/${product.id}`}
-                    className="category-product__title-link"
-                  >
-                    <h3 className="category-product__title">{product.title}</h3>
-                  </Link>
+                  <h3 className="category-product__title">{product.title}</h3>
                   <div className="category-product__price-container">
                     <span className="category-product__price-original">
                       {product.originalPrice}

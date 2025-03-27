@@ -17,11 +17,11 @@ export default function Page() {
       category: "상의",
       originalPrice: "59,000원",
       price: "45,000원",
-      image: "/assets/bestseller/bestseller1.svg",
+      image: "/assets/bestseller/bestseller4.svg",
       rating: 4.5,
       reviewCount: 32,
       isNew: false,
-      isBest: true,
+      isBest: false,
       isSale: false,
       rank: 1,
     },
@@ -31,12 +31,12 @@ export default function Page() {
       category: "액세서리",
       originalPrice: "48,000원",
       price: "38,000원",
-      image: "/assets/bestseller/bestseller2.svg",
+      image: "/assets/bestseller/bestseller4.svg",
       rating: 4.7,
       reviewCount: 45,
       isNew: false,
-      isBest: true,
-      isSale: false,
+      isBest: false,
+
       rank: 2,
     },
     {
@@ -45,12 +45,12 @@ export default function Page() {
       category: "하의",
       originalPrice: "68,000원",
       price: "52,000원",
-      image: "/assets/bestseller/bestseller3.svg",
+      image: "/assets/bestseller/bestseller4.svg",
       rating: 4.3,
       reviewCount: 28,
       isNew: false,
-      isBest: true,
-      isSale: false,
+      isBest: false,
+
       rank: 3,
     },
     {
@@ -59,6 +59,71 @@ export default function Page() {
       category: "상의",
       originalPrice: "52,000원",
       price: "42,000원",
+      image: "/assets/bestseller/bestseller4.svg",
+      rating: 4.6,
+      reviewCount: 22,
+      isNew: false,
+      isBest: true,
+      isSale: false,
+    },
+    {
+      id: 5,
+      title: "플라워 패턴 블라우스",
+      category: "상의",
+      originalPrice: "59,000원",
+      price: "45,000원",
+      image: "/assets/bestseller/bestseller4.svg",
+      rating: 4.5,
+      reviewCount: 32,
+      isNew: false,
+      isBest: true,
+      isSale: false,
+    },
+    {
+      id: 6,
+      title: "미니멀 크로스백",
+      category: "액세서리",
+      originalPrice: "48,000원",
+      price: "38,000원",
+      image: "/assets/bestseller/bestseller4.svg",
+      rating: 4.7,
+      reviewCount: 45,
+      isNew: false,
+      isBest: true,
+      isSale: false,
+    },
+    {
+      id: 7,
+      title: "와이드 데님 팬츠",
+      category: "하의",
+      originalPrice: "68,000원",
+      price: "52,000원",
+      image: "/assets/bestseller/bestseller4.svg",
+      rating: 4.3,
+      reviewCount: 28,
+      isNew: false,
+      isBest: true,
+      isSale: false,
+    },
+    {
+      id: 8,
+      title: "퍼프 슬리브 블라우스",
+      category: "상의",
+      originalPrice: "52,000원",
+      price: "42,000원",
+      image: "/assets/bestseller/bestseller4.svg",
+      rating: 4.6,
+      reviewCount: 22,
+      isNew: false,
+      isBest: true,
+      isSale: false,
+    },
+    {
+      id: 9,
+      title: "퍼프 슬리브 블라우스",
+      category: "상의",
+      originalPrice: "52,000원",
+      price: "18,000원",
       image: "/assets/bestseller/bestseller4.svg",
       rating: 4.6,
       reviewCount: 22,
@@ -278,21 +343,21 @@ export default function Page() {
                     <button className="category-product__action-button">
                       <i className="fas fa-shopping-cart"></i>
                     </button>
-                    <button className="category-product__action-button">
-                      <i className="fas fa-search"></i>
-                    </button>
+                    <Link
+                      href={`/product/${product.id}`}
+                      className="category-product__title-link"
+                    >
+                      <button className="category-product__action-button">
+                        <i className="fas fa-search"></i>
+                      </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-product__content">
                   <div className="category-product__category">
                     {product.category}
                   </div>
-                  <Link
-                    href={`/product/${product.id}`}
-                    className="category-product__title-link"
-                  >
-                    <h3 className="category-product__title">{product.title}</h3>
-                  </Link>
+                  <h3 className="category-product__title">{product.title}</h3>
                   <div className="category-product__price-container">
                     <span className="category-product__price-original">
                       {product.originalPrice}

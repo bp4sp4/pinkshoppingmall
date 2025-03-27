@@ -11,7 +11,7 @@ export default function Header() {
       <div className="container">
         <div className="header__container">
           <Link href="/" className="header__logo">
-            핑크숍
+            <span className="header__logo-text">핑크숍</span>
           </Link>
 
           <nav className="header__nav">
@@ -43,9 +43,6 @@ export default function Header() {
             </Link>
             <Link href="/best-sellers" className="header__nav-item">
               베스트
-            </Link>
-            <Link href="/time-deals" className="header__nav-item">
-              타임딜
             </Link>
           </nav>
 
