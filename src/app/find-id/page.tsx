@@ -66,11 +66,6 @@ export default function FindId() {
       <div className="container">
         <div className="login-container">
           <div className="login-image">
-            <img
-              src="/assets/bestseller/bestseller3.svg"
-              alt="아이디 찾기 이미지"
-              className="login-image__img"
-            />
             <div className="login-image__overlay">
               <h2 className="login-image__title">아이디를 잊으셨나요?</h2>
               <p className="login-image__text">

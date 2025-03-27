@@ -69,11 +69,6 @@ export default function FindPassword() {
       <div className="container">
         <div className="login-container">
           <div className="login-image">
-            <img
-              src="/assets/bestseller/bestseller2.svg"
-              alt="비밀번호 찾기 이미지"
-              className="login-image__img"
-            />
             <div className="login-image__overlay">
               <h2 className="login-image__title">비밀번호를 잊으셨나요?</h2>
               <p className="login-image__text">

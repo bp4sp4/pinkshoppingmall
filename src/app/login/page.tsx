@@ -71,8 +71,7 @@ export default function Login() {
     if (validate()) {
       // 로그인 처리 로직 (실제로는 API 호출)
       alert("로그인 성공! 홈페이지로 이동합니다.");
-      // 홈페이지로 리다이렉트 (실제 구현 시)
-      // router.push('/');
+      window.location.href = "/";
     }
   };
 
