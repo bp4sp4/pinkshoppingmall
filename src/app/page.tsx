@@ -5,6 +5,8 @@ import MainBannerSwiper from "./components/MainBannerSwiper";
 import Link from "next/link";
 import "./styles/card-styles.css";
 import DummyProducts from "./components/DummyProducts";
+import PersonalizationSystem from "./components/PersonalizationSystem";
+import SeasonalTrendSection from "./components/seasonal-trend-section";
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
       {/* 타임딜 섹션 */}
       <TimeDealSwiper />
 
+      <PersonalizationSystem />
       {/* 카테고리 섹션 */}
       <section className="section">
         <div className="container">
@@ -193,6 +196,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SeasonalTrendSection />
 
       {/* 신상품 섹션 */}
       <section className="section">

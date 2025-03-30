@@ -7,7 +7,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { CartProvider } from "./context/CartContext";
 import CartPopup from "./components/CartPopup";
-import Chatbot from "./components/Chatbot";
+import EnhancedChatbot from "./components/enhanced-chatbot";
+import "./styles/enhanced-chatbot.css";
+import "./styles/personalization-system.css";
+import "./styles/seasonal-trend-section.css";
 
 export const metadata: Metadata = {
   title: "핑크숍 - 화사한 봄을 위한 특별한 아이템",
@@ -47,7 +50,7 @@ export default function RootLayout({
           <CartPopup />
         </CartProvider>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-        <Chatbot />
+        <EnhancedChatbot />
       </body>
     </html>
   );

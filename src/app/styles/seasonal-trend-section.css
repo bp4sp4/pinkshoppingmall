@@ -1,0 +1,384 @@
+/* 시즌별/트렌드 추천 섹션 스타일 */
+.seasonal-trend-section {
+    margin: 40px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    --theme-color: #ff6b6b;
+    --theme-color-light: rgba(255, 107, 107, 0.2);
+}
+
+/* 시즌 헤더 */
+.seasonal-header {
+    position: relative;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.seasonal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+
+.seasonal-header__content {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.seasonal-header__title {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.seasonal-header__description {
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 60%;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+.seasonal-header__event-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--theme-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+/* 탭 네비게이션 */
+.seasonal-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.seasonal-tabs__button {
+    background: none;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.seasonal-tabs__button:hover {
+    color: var(--theme-color);
+}
+
+.seasonal-tabs__button--active {
+    color: var(--theme-color);
+    font-weight: 600;
+}
+
+.seasonal-tabs__button--active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--theme-color);
+    border-radius: 3px 3px 0 0;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* 상품 그리드 */
+.seasonal-products {
+    min-height: 400px;
+}
+
+.seasonal-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    color: #666;
+}
+
+.seasonal-loading__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--theme-color);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    animation: spin 1s linear infinite;
+}
+
+.seasonal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.seasonal-grid--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 상품 카드 */
+.seasonal-product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.seasonal-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.seasonal-product-card__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 1;
+    color: white;
+}
+
+.seasonal-product-card__badge--new {
+    background-color: #4caf50;
+}
+
+.seasonal-product-card__badge--hot {
+    background-color: #f44336;
+}
+
+.seasonal-product-card__badge--trend {
+    background-color: #9c27b0;
+}
+
+.seasonal-product-card__discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff9800;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.seasonal-product-card__image-container {
+    height: 200px;
+    overflow: hidden;
+}
+
+.seasonal-product-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.seasonal-product-card:hover .seasonal-product-card__image {
+    transform: scale(1.05);
+}
+
+.seasonal-product-card__content {
+    padding: 15px;
+}
+
+.seasonal-product-card__title {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.seasonal-product-card__price {
+    margin: 0;
+    font-weight: 600;
+    color: var(--theme-color);
+}
+
+.seasonal-product-card__button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--theme-color-light);
+    color: var(--theme-color);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.seasonal-product-card:hover .seasonal-product-card__button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.seasonal-product-card__button:hover {
+    background-color: var(--theme-color);
+    color: white;
+}
+
+/* 푸터 */
+.seasonal-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.seasonal-footer__button {
+    padding: 12px 25px;
+    background-color: white;
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.seasonal-footer__button:hover {
+    background-color: var(--theme-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .seasonal-header {
+        height: 200px;
+    }
+
+    .seasonal-header__title {
+        font-size: 1.8rem;
+    }
+
+    .seasonal-header__description {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+
+    .seasonal-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .seasonal-product-card__image-container {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seasonal-header {
+        height: 180px;
+    }
+
+    .seasonal-header__title {
+        font-size: 1.5rem;
+    }
+
+    .seasonal-header__description {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .seasonal-tabs__button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .seasonal-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
