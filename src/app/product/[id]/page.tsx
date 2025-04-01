@@ -29,7 +29,7 @@ const productsData: { [key: string]: ProductData } = {
   "1": {
     id: "1",
     title: "플라워 패턴 블라우스",
-    category: "의류",
+    category: "clothing",
     description:
       "화사한 플라워 패턴이 돋보이는 블라우스입니다. 가볍고 시원한 소재로 제작되어 봄, 여름 시즌에 착용하기 좋습니다. 다양한 하의와 매치하여 스타일링하기 쉽습니다.",
     originalPrice: "59,000원",
@@ -64,7 +64,7 @@ const productsData: { [key: string]: ProductData } = {
   "2": {
     id: "2",
     title: "미니멀 크로스백",
-    category: "액세서리",
+    category: "accessories",
     description:
       "심플한 디자인의 미니멀 크로스백입니다. 실용적인 수납공간과 가벼운 무게로 데일리 아이템으로 활용하기 좋습니다. 다양한 스타일에 매치하기 쉬운 베이직한 디자인입니다.",
     originalPrice: "48,000원",
@@ -99,7 +99,7 @@ const productsData: { [key: string]: ProductData } = {
   "3": {
     id: "3",
     title: "와이드 데님 팬츠",
-    category: "의류",
+    category: "clothing",
     description:
       "편안한 착용감의 와이드 데님 팬츠입니다. 트렌디한 와이드 핏으로 다리가 길어 보이는 효과가 있습니다. 다양한 상의와 매치하여 캐주얼하게 스타일링할 수 있습니다.",
     originalPrice: "68,000원",
@@ -134,7 +134,7 @@ const productsData: { [key: string]: ProductData } = {
   "4": {
     id: "4",
     title: "퍼프 슬리브 블라우스",
-    category: "의류",
+    category: "clothing",
     description:
       "여성스러운 퍼프 슬리브 디자인의 블라우스입니다. 부드러운 소재로 착용감이 좋으며, 다양한 하의와 매치하기 좋습니다. 오피스룩부터 데일리룩까지 활용도가 높은 아이템입니다.",
     originalPrice: "52,000원",
@@ -169,7 +169,7 @@ const productsData: { [key: string]: ProductData } = {
   "5": {
     id: "5",
     title: "플리츠 미니 스커트",
-    category: "의류",
+    category: "clothing",
     description:
       "여성스러운 플리츠 디자인의 미니 스커트입니다. 가벼운 소재로 활동성이 좋으며, 다양한 상의와 매치하기 좋습니다. 봄, 여름 시즌에 착용하기 좋은 아이템입니다.",
     originalPrice: "46,000원",
@@ -204,7 +204,7 @@ const productsData: { [key: string]: ProductData } = {
   "6": {
     id: "6",
     title: "스트라이프 니트 풀오버",
-    category: "의류",
+    category: "clothing",
     description:
       "심플한 스트라이프 패턴의 니트 풀오버입니다. 부드러운 소재로 착용감이 우수하며, 데일리룩으로 활용하기 좋습니다. 다양한 하의와 매치하여 캐주얼하거나 세련된 스타일링이 가능합니다.",
     originalPrice: "62,000원",
@@ -240,7 +240,7 @@ const productsData: { [key: string]: ProductData } = {
   "7": {
     id: "7",
     title: "파스텔 플라워 원피스",
-    category: "의류",
+    category: "clothing",
     description:
       "봄 시즌에 어울리는 파스텔 톤의 플라워 패턴 원피스입니다. 가벼운 폴리에스터 소재로 제작되어 착용감이 우수하며, 여성스러운 실루엣을 연출할 수 있습니다.",
     originalPrice: "72,000원",
@@ -276,7 +276,7 @@ const productsData: { [key: string]: ProductData } = {
   "8": {
     id: "8",
     title: "봄 시즌 린넨 자켓",
-    category: "의류",
+    category: "clothing",
     description:
       "봄철 가볍게 걸칠 수 있는 린넨 자켓입니다. 통기성이 뛰어난 린넨 소재로 제작되어 쾌적하게 착용할 수 있으며, 다양한 스타일링이 가능합니다.",
     originalPrice: "85,000원",
@@ -311,7 +311,7 @@ const productsData: { [key: string]: ProductData } = {
   "9": {
     id: "9",
     title: "봄맞이 캔버스 백",
-    category: "액세서리",
+    category: "accessories",
     description:
       "봄 시즌에 어울리는 화사한 캔버스 백입니다. 넉넉한 수납공간과 튼튼한 소재로 제작되어 데일리백으로 사용하기 좋습니다. 플라워 패턴 디테일로 포인트를 더했습니다.",
     originalPrice: "42,000원",

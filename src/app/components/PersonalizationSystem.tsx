@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 // 개인화 추천 시스템 인터페이스
 interface RecommendedProduct {
@@ -205,121 +206,130 @@ export default function PersonalizationSystem() {
   };
 
   return (
-    <div className="personalization-container">
-      {/* 개인화된 환영 메시지 */}
-      <div className="welcome-banner">
-        <h2 className="welcome-banner__title">{getWelcomeMessage()}</h2>
-        <p className="welcome-banner__subtitle">
-          {safeArrayLength(userActivity?.viewedProducts) > 0
-            ? "회원님의 취향에 맞는 상품을 준비했어요."
-            : "다양한 상품을 둘러보세요."}
-        </p>
-      </div>
+    <>
+      {" "}
+      <div className="personalization-container">
+        {/* 개인화된 환영 메시지 */}
+        <div className="welcome-banner">
+          <h2 className="welcome-banner__title">{getWelcomeMessage()}</h2>
+          <p className="welcome-banner__subtitle">
+            {safeArrayLength(userActivity?.viewedProducts) > 0
+              ? "회원님의 취향에 맞는 상품을 준비했어요."
+              : "다양한 상품을 둘러보세요."}
+          </p>
+        </div>
 
-      {/* 개인화된 상품 추천 섹션 */}
-      <div className="personalized-recommendations">
-        <h3 className="personalized-recommendations__title">
-          <span className="personalized-recommendations__icon">✨</span>
-          회원님을 위한 추천 상품
-        </h3>
+        {/* 개인화된 상품 추천 섹션 */}
+        <div className="personalized-recommendations">
+          <h3 className="personalized-recommendations__title">
+            <span className="personalized-recommendations__icon">✨</span>
+            회원님을 위한 추천 상품
+          </h3>
 
-        {isLoading ? (
-          <div className="recommendations-loading">
-            <div className="recommendations-loading__spinner"></div>
-            <p>맞춤 상품을 불러오는 중...</p>
+          {isLoading ? (
+            <div className="recommendations-loading">
+              <div className="recommendations-loading__spinner"></div>
+              <p>맞춤 상품을 불러오는 중...</p>
+            </div>
+          ) : (
+            <div
+              className={`recommendations-grid ${
+                showRecommendations ? "recommendations-grid--visible" : ""
+              }`}
+            >
+              {recommendedProducts &&
+                recommendedProducts.map((product) => (
+                  <Link key={product.id} href={`/product/${product.id}`}>
+                    <div
+                      key={product.id}
+                      className="recommendation-card"
+                      onClick={() =>
+                        trackProductView(product.id, product.category)
+                      }
+                    >
+                      <div className="recommendation-card__image-container">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="recommendation-card__image"
+                        />
+                      </div>
+                      <div className="recommendation-card__content">
+                        <h4 className="recommendation-card__title">
+                          {product.title}
+                        </h4>
+                        <p className="recommendation-card__price">
+                          {product.price}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          )}
+        </div>
+
+        {/* 최근 본 상품 섹션 */}
+        {safeArrayLength(userActivity?.viewedProducts) > 0 && (
+          <div className="recently-viewed">
+            <h3 className="recently-viewed__title">
+              <span className="recently-viewed__icon">👁️</span>
+              최근 본 상품
+            </h3>
+            <div className="recently-viewed__list">
+              {recommendedProducts &&
+                recommendedProducts.slice(0, 3).map((product) => (
+                  <Link key={product.id} href={`/product/${product.id}`}>
+                    <div
+                      key={product.id}
+                      className="recently-viewed__item"
+                      onClick={() =>
+                        trackProductView(product.id, product.category)
+                      }
+                    >
+                      <div className="recently-viewed__image-container">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="recently-viewed__image"
+                        />
+                      </div>
+                      <div className="recently-viewed__content">
+                        <h4 className="recently-viewed__item-title">
+                          {product.title}
+                        </h4>
+                        <p className="recently-viewed__item-price">
+                          {product.price}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
           </div>
-        ) : (
-          <div
-            className={`recommendations-grid ${
-              showRecommendations ? "recommendations-grid--visible" : ""
-            }`}
-          >
-            {recommendedProducts &&
-              recommendedProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="recommendation-card"
-                  onClick={() => trackProductView(product.id, product.category)}
+        )}
+
+        {/* 검색 기록 기반 추천 검색어 */}
+        {safeArrayLength(userActivity?.searchTerms) > 0 && (
+          <div className="search-suggestions">
+            <h3 className="search-suggestions__title">
+              <span className="search-suggestions__icon">🔍</span>
+              추천 검색어
+            </h3>
+            <div className="search-suggestions__list">
+              {userActivity.searchTerms.slice(0, 5).map((term, index) => (
+                <button
+                  key={index}
+                  className="search-suggestions__item"
+                  onClick={() => trackSearchTerm(term)}
                 >
-                  <div className="recommendation-card__image-container">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="recommendation-card__image"
-                    />
-                  </div>
-                  <div className="recommendation-card__content">
-                    <h4 className="recommendation-card__title">
-                      {product.title}
-                    </h4>
-                    <p className="recommendation-card__price">
-                      {product.price}
-                    </p>
-                  </div>
-                </div>
+                  {term}
+                </button>
               ))}
+            </div>
           </div>
         )}
       </div>
-
-      {/* 최근 본 상품 섹션 */}
-      {safeArrayLength(userActivity?.viewedProducts) > 0 && (
-        <div className="recently-viewed">
-          <h3 className="recently-viewed__title">
-            <span className="recently-viewed__icon">👁️</span>
-            최근 본 상품
-          </h3>
-          <div className="recently-viewed__list">
-            {/* 실제 구현에서는 API를 통해 상품 정보를 가져와야 함 */}
-            {/* 여기서는 더미 데이터로 대체 */}
-            {recommendedProducts &&
-              recommendedProducts.slice(0, 3).map((product) => (
-                <div
-                  key={product.id}
-                  className="recently-viewed__item"
-                  onClick={() => trackProductView(product.id, product.category)}
-                >
-                  <div className="recently-viewed__image-container">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="recently-viewed__image"
-                    />
-                  </div>
-                  <div className="recently-viewed__content">
-                    <h4 className="recently-viewed__item-title">
-                      {product.title}
-                    </h4>
-                    <p className="recently-viewed__item-price">
-                      {product.price}
-                    </p>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-      )}
-
-      {/* 검색 기록 기반 추천 검색어 */}
-      {safeArrayLength(userActivity?.searchTerms) > 0 && (
-        <div className="search-suggestions">
-          <h3 className="search-suggestions__title">
-            <span className="search-suggestions__icon">🔍</span>
-            추천 검색어
-          </h3>
-          <div className="search-suggestions__list">
-            {userActivity.searchTerms.slice(0, 5).map((term, index) => (
-              <button
-                key={index}
-                className="search-suggestions__item"
-                onClick={() => trackSearchTerm(term)}
-              >
-                {term}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
+    </>
   );
 }

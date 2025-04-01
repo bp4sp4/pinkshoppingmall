@@ -111,10 +111,7 @@
     animation: slideIn 0.3s ease-out;
 }
 
-/* 상품 그리드 */
-.seasonal-products {
-    min-height: 400px;
-}
+
 
 .seasonal-loading {
     display: flex;

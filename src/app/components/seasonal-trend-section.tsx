@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { idText } from "typescript";
 
 // 시즌별/트렌드 추천 상품 인터페이스
 interface TrendProduct {
@@ -43,33 +45,9 @@ export default function SeasonalTrendSection() {
           id: "spring",
           name: "봄 시즌",
           description: "가벼운 옷차림으로 산뜻하게 시작하는 봄",
-          image: "/seasons/spring.jpg",
+          image: "/assets/SpringSale.png",
           theme: "#f8b195",
           months: [3, 4, 5],
-        },
-        {
-          id: "summer",
-          name: "여름 컬렉션",
-          description: "시원하고 스타일리시한 여름 아이템",
-          image: "/seasons/summer.jpg",
-          theme: "#5fb3b3",
-          months: [6, 7, 8],
-        },
-        {
-          id: "fall",
-          name: "가을 스타일",
-          description: "차분하고 따뜻한 가을 패션",
-          image: "/seasons/fall.jpg",
-          theme: "#d68060",
-          months: [9, 10, 11],
-        },
-        {
-          id: "winter",
-          name: "겨울 특별전",
-          description: "포근하고 세련된 겨울 아이템",
-          image: "/seasons/winter.jpg",
-          theme: "#546a7b",
-          months: [12, 1, 2],
         },
       ];
 
@@ -92,33 +70,32 @@ export default function SeasonalTrendSection() {
       setTimeout(() => {
         const seasonalProducts: TrendProduct[] = [
           {
-            id: "s1",
+            id: "8",
             title: "시즌 특별 블라우스",
-            image: "/products/seasonal1.jpg",
+            image: "/products/SpringBlous.png",
             price: "39,000원",
             category: "clothing",
             badge: "NEW",
           },
           {
-            id: "s2",
+            id: "7",
             title: "시그니처 시즌 원피스",
-            image: "/products/seasonal2.jpg",
+            image: "/products/SpringOnepices.png",
             price: "58,000원",
             category: "clothing",
-            badge: "HOT",
+            badge: "NEW",
           },
           {
-            id: "s3",
+            id: "6",
             title: "시즌 컬러 니트",
-            image: "/products/seasonal3.jpg",
+            image: "/products/Springneat.png",
             price: "42,000원",
             category: "clothing",
-            discount: "15%",
           },
           {
-            id: "s4",
+            id: "5",
             title: "시즌 패턴 스커트",
-            image: "/products/seasonal4.jpg",
+            image: "/products/SrpingPattern.png",
             price: "36,000원",
             category: "clothing",
           },
@@ -126,35 +103,35 @@ export default function SeasonalTrendSection() {
 
         const trendingProducts: TrendProduct[] = [
           {
-            id: "t1",
+            id: "1",
             title: "트렌디 오버사이즈 셔츠",
-            image: "/products/trend1.jpg",
+            image: "/products/TendShrits.png",
             price: "45,000원",
             category: "clothing",
             badge: "TREND",
           },
           {
-            id: "t2",
+            id: "2",
             title: "인기 크롭 자켓",
-            image: "/products/trend2.jpg",
+            image: "/products/TrendCrob.png",
             price: "68,000원",
             category: "clothing",
             badge: "HOT",
           },
           {
-            id: "t3",
+            id: "3",
             title: "트렌드 와이드 팬츠",
-            image: "/products/trend3.jpg",
+            image: "/products/TrendWidePants.png",
             price: "52,000원",
             category: "clothing",
           },
           {
-            id: "t4",
+            id: "4",
             title: "스트릿 스타일 후드",
-            image: "/products/trend4.jpg",
+            image: "/products/TrendHoods.png",
             price: "49,000원",
             category: "clothing",
-            discount: "20%",
+            badge: "HOT",
           },
         ];
 
@@ -231,112 +208,108 @@ export default function SeasonalTrendSection() {
   };
 
   return (
-    <section className="seasonal-trend-section" style={getSectionStyle()}>
-      {/* 시즌 헤더 */}
-      <div className="container">
-        {currentSeason && (
-          <div
-            className="seasonal-header"
-            style={{ backgroundImage: `url(${currentSeason.image})` }}
-          >
-            <div className="seasonal-header__content">
-              <h2 className="seasonal-header__title">{currentSeason.name}</h2>
-              <p className="seasonal-header__description">
-                {currentSeason.description}
-              </p>
-
-              {/* 특별 이벤트 배지 */}
-              {getSpecialEvent() && (
-                <div className="seasonal-header__event-badge">
-                  {getSpecialEvent()}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* 탭 네비게이션 */}
-        <div className="seasonal-tabs">
-          <button
-            className={`seasonal-tabs__button ${
-              activeTab === "season" ? "seasonal-tabs__button--active" : ""
-            }`}
-            onClick={() => handleTabChange("season")}
-          >
-            시즌 추천
-          </button>
-          <button
-            className={`seasonal-tabs__button ${
-              activeTab === "trend" ? "seasonal-tabs__button--active" : ""
-            }`}
-            onClick={() => handleTabChange("trend")}
-          >
-            트렌드 아이템
-          </button>
-        </div>
-
-        {/* 상품 그리드 */}
-        <div className="seasonal-products">
-          {isLoading ? (
-            <div className="seasonal-loading">
-              <div className="seasonal-loading__spinner"></div>
-              <p>추천 상품을 불러오는 중...</p>
-            </div>
-          ) : (
+    <>
+      <section className="seasonal-trend-section" style={getSectionStyle()}>
+        {/* 시즌 헤더 */}
+        <div className="container">
+          {currentSeason && (
             <div
-              className={`seasonal-grid ${
-                showProducts ? "seasonal-grid--visible" : ""
-              }`}
+              className="seasonal-header"
+              style={{ backgroundImage: `url(${currentSeason.image})` }}
             >
-              {trendProducts.map((product) => (
-                <div key={product.id} className="seasonal-product-card">
-                  {/* 배지 표시 */}
-                  {product.badge && (
-                    <span
-                      className={`seasonal-product-card__badge seasonal-product-card__badge--${product.badge.toLowerCase()}`}
-                    >
-                      {product.badge}
-                    </span>
-                  )}
+              <div className="seasonal-header__content">
+                <h2 className="seasonal-header__title">{currentSeason.name}</h2>
+                <p className="seasonal-header__description">
+                  {currentSeason.description}
+                </p>
 
-                  {/* 할인율 표시 */}
-                  {product.discount && (
-                    <span className="seasonal-product-card__discount">
-                      {product.discount}
-                    </span>
-                  )}
-
-                  <div className="seasonal-product-card__image-container">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="seasonal-product-card__image"
-                    />
+                {/* 특별 이벤트 배지 */}
+                {getSpecialEvent() && (
+                  <div className="seasonal-header__event-badge">
+                    {getSpecialEvent()}
                   </div>
-                  <div className="seasonal-product-card__content">
-                    <h3 className="seasonal-product-card__title">
-                      {product.title}
-                    </h3>
-                    <p className="seasonal-product-card__price">
-                      {product.price}
-                    </p>
-                  </div>
-                  <button className="seasonal-product-card__button">
-                    장바구니에 담기
-                  </button>
-                </div>
-              ))}
+                )}
+              </div>
             </div>
           )}
-        </div>
 
-        {/* 시즌 푸터 - 더 많은 상품 보기 */}
-        <div className="seasonal-footer">
-          <button className="seasonal-footer__button">
-            {activeTab === "season" ? "시즌 상품 더보기" : "트렌드 상품 더보기"}
-          </button>
+          {/* 탭 네비게이션 */}
+          <div className="seasonal-tabs">
+            <button
+              className={`seasonal-tabs__button ${
+                activeTab === "season" ? "seasonal-tabs__button--active" : ""
+              }`}
+              onClick={() => handleTabChange("season")}
+            >
+              시즌 추천
+            </button>
+            <button
+              className={`seasonal-tabs__button ${
+                activeTab === "trend" ? "seasonal-tabs__button--active" : ""
+              }`}
+              onClick={() => handleTabChange("trend")}
+            >
+              트렌드 아이템
+            </button>
+          </div>
+
+          {/* 상품 그리드 */}
+          <div className="seasonal-products">
+            {isLoading ? (
+              <div className="seasonal-loading">
+                <div className="seasonal-loading__spinner"></div>
+                <p>추천 상품을 불러오는 중...</p>
+              </div>
+            ) : (
+              <div
+                className={`seasonal-grid ${
+                  showProducts ? "seasonal-grid--visible" : ""
+                }`}
+              >
+                {trendProducts.map((product) => (
+                  <Link key={product.id} href={`/product/${product.id}`}>
+                    <div key={product.id} className="seasonal-product-card">
+                      {product.badge && (
+                        <span
+                          className={`seasonal-product-card__badge seasonal-product-card__badge--${product.badge.toLowerCase()}`}
+                        >
+                          {product.badge}
+                        </span>
+                      )}
+
+                      {/* 할인율 표시 */}
+                      {product.discount && (
+                        <span className="seasonal-product-card__discount">
+                          {product.discount}
+                        </span>
+                      )}
+
+                      <div className="seasonal-product-card__image-container">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="seasonal-product-card__image"
+                        />
+                      </div>
+                      <div className="seasonal-product-card__content">
+                        <h3 className="seasonal-product-card__title">
+                          {product.title}
+                        </h3>
+                        <p className="seasonal-product-card__price">
+                          {product.price}
+                        </p>
+                      </div>
+                      <button className="seasonal-product-card__button">
+                        장바구니에 담기
+                      </button>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

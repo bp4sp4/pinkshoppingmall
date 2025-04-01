@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+
 import "../../styles/category.css";
 
-export default function Page() {
+export default function Page({ params }: { params: { category: string } }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [priceFilter, setPriceFilter] = useState("전체");
   const [sortBy, setSortBy] = useState("최신순");
