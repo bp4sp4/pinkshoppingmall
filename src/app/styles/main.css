@@ -326,7 +326,7 @@
 }
 
 .category__item:hover .category__icon {
-  background-color: var(--color-main);
+  background-color: #fbd7d7;
 }
 
 .category__icon-image {
